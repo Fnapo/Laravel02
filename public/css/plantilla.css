@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+/*
+    Prepocesador sass de css
+*/
+
+body {
+  background-color: lightgray;
+  width: 100%;
+}
+
+a.desactivado {
+  /*
+  color: red; //Puedo eliminarlo por el uso de Bootstrap
+  */
+  text-decoration: none;
+  pointer-events: none;
+  /* Desactiva el ratón sobre el link */
+}
+
+[class*=boton-] {
+  font-size: larger;
+  color: black;
+  text-decoration: none;
+}
+
+.bordes-2 {
+  border: 2px solid black;
+}
+
+[class*=boton-]:hover {
+  background-color: aquamarine;
+}
+
+.caja-boton {
+  background-color: aliceblue;
+  padding: 4px;
+}
+
+.caja-boton:hover {
+  background-color: aliceblue;
+}
+
+.caja-vacia {
+  background-color: inherit;
+  padding: 0;
+}
+
+.caja-vacia:hover {
+  cursor: pointer;
+}
+
+.color-az {
+  color: blue;
+}
+
+.fondo-v {
+  background-color: darkseagreen;
+}
+
+.boton-normal {
+  background-color: olive;
+}
+
+.boton-peligro {
+  background-color: darkred;
+}
+
+.color-r {
+  color: red;
+}
+
+.texto-c {
+  text-align: center;
+}
+
+[class*=fuente-20] {
+  font-size: 20px;
+}
+
+[class*=-bold] {
+  font-weight: bolder;
+}
+
+.fondo-alice {
+  background-color: aliceblue;
+}
+
+[class*=ancho-] {
+  display: inline-block;
+}
+
+.sin-bordes {
+  border: none;
+}
+
+.ancho-1 {
+  width: 1em;
+}
+
+.ancho-2 {
+  width: 2em;
+}
+
+.ancho-3 {
+  width: 3em;
+}
+
+.ancho-4 {
+  width: 4em;
+}
+
+.ancho-5 {
+  width: 5em;
+}
+
+.ancho-6 {
+  width: 6em;
+}
+
+.ancho-7 {
+  width: 7em;
+}
+
+.ancho-8 {
+  width: 8em;
+}
+
+.ancho-9 {
+  width: 9em;
+}
+
+.ancho-10 {
+  width: 10em;
+}
+
+.ancho-11 {
+  width: 11em;
+}
+
+.ancho-12 {
+  width: 12em;
+}
+
+.ancho-13 {
+  width: 13em;
+}
+
+.ancho-14 {
+  width: 14em;
+}
+
+.ancho-15 {
+  width: 15em;
+}
+
+.ancho-16 {
+  width: 16em;
+}
+
+.ancho-17 {
+  width: 17em;
+}
+
+.ancho-18 {
+  width: 18em;
+}
+
+.ancho-19 {
+  width: 19em;
+}
+
+.ancho-20 {
+  width: 20em;
+}
+
+.ancho-21 {
+  width: 21em;
+}
+
+.ancho-22 {
+  width: 22em;
+}
+
+.ancho-23 {
+  width: 23em;
+}
+
+.ancho-24 {
+  width: 24em;
+}
+
+.ancho-25 {
+  width: 25em;
+}
+
+.ancho-26 {
+  width: 26em;
+}
+
+.ancho-27 {
+  width: 27em;
+}
+
+.ancho-28 {
+  width: 28em;
+}
+
+.ancho-29 {
+  width: 29em;
+}
+
+.ancho-30 {
+  width: 30em;
+}
+
+.alto-2 {
+  line-height: 2em;
+}
+
+.alto-3 {
+  line-height: 3em;
+}
+
+.margen-10 {
+  margin: 10px;
+}
+
+.centraTabla {
+  text-align: center;
+}
+
+.tabla-i-b {
+  display: inline-block;
+}
+
+.tabla {
+  border: 5px solid saddlebrown;
+}
+
+.colapsada {
+  border-collapse: collapse;
+}
+
+.celda {
+  border: 2px solid black;
+  padding: 2px;
+}
+
+a,
+input {
+  padding: 2px;
+}
+
+.nav-pills .nav-item .active {
+  border: 2px solid transparent;
+}
+
+.nav-pills .nav-item .color-az {
+  border: 2px solid transparent;
+  background-color: lightgreen;
+}
+
+.nav-pills .nav-item .color-az:hover {
+  border: 2px solid black;
+}
+
+.nav-item {
+  margin: 10px;
+}
+
+.flex-der {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+          flex-direction: row-reverse;
+}
+
+.alto-pantalla {
+  height: 100vh;
+}
+
+.sin-margen {
+  margin: 0px;
+}
+

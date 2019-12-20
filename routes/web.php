@@ -12,6 +12,13 @@
  */
 
 App::setlocale('es'); // Para avisos en castellano.
+/*
+App\User::create([
+'name' => 'Dolores Porcuna',
+'email' => 'fran_sopo@msn.com',
+'password' => bcrypt('fesopo1808'),
+]); // Crea un usuario.
+ */
 
 /*
 Comentada para usar las rutas creadas propias.
@@ -69,7 +76,7 @@ Como de momento sólo utilizo el método index (mostrar todos los proyectos) ...
 Al final usaré todos, por eso elimino el ->only('index');
  */
 Route::resource('proyectos', 'ProyectoController'); // El nombre del controlador en singular.
-
+Route::resource('usuarios', 'UserController'); // UserController para refernciar a la clase User de Laravel.
 /*
 Para tratar (validar) el form creo un nuevo controlador. De momento sólo con store.
  */

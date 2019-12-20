@@ -86,131 +86,157 @@ a.desactivado {
   background-color: aliceblue;
 }
 
-[class*=ancho-] {
-  display: inline-block;
-}
-
 .sin-bordes {
   border: none;
 }
 
 .ancho-1 {
+  display: inline-block;
   width: 1em;
 }
 
 .ancho-2 {
+  display: inline-block;
   width: 2em;
 }
 
 .ancho-3 {
+  display: inline-block;
   width: 3em;
 }
 
 .ancho-4 {
+  display: inline-block;
   width: 4em;
 }
 
 .ancho-5 {
+  display: inline-block;
   width: 5em;
 }
 
 .ancho-6 {
+  display: inline-block;
   width: 6em;
 }
 
 .ancho-7 {
+  display: inline-block;
   width: 7em;
 }
 
 .ancho-8 {
+  display: inline-block;
   width: 8em;
 }
 
 .ancho-9 {
+  display: inline-block;
   width: 9em;
 }
 
 .ancho-10 {
+  display: inline-block;
   width: 10em;
 }
 
 .ancho-11 {
+  display: inline-block;
   width: 11em;
 }
 
 .ancho-12 {
+  display: inline-block;
   width: 12em;
 }
 
 .ancho-13 {
+  display: inline-block;
   width: 13em;
 }
 
 .ancho-14 {
+  display: inline-block;
   width: 14em;
 }
 
 .ancho-15 {
+  display: inline-block;
   width: 15em;
 }
 
 .ancho-16 {
+  display: inline-block;
   width: 16em;
 }
 
 .ancho-17 {
+  display: inline-block;
   width: 17em;
 }
 
 .ancho-18 {
+  display: inline-block;
   width: 18em;
 }
 
 .ancho-19 {
+  display: inline-block;
   width: 19em;
 }
 
 .ancho-20 {
+  display: inline-block;
   width: 20em;
 }
 
 .ancho-21 {
+  display: inline-block;
   width: 21em;
 }
 
 .ancho-22 {
+  display: inline-block;
   width: 22em;
 }
 
 .ancho-23 {
+  display: inline-block;
   width: 23em;
 }
 
 .ancho-24 {
+  display: inline-block;
   width: 24em;
 }
 
 .ancho-25 {
+  display: inline-block;
   width: 25em;
 }
 
 .ancho-26 {
+  display: inline-block;
   width: 26em;
 }
 
 .ancho-27 {
+  display: inline-block;
   width: 27em;
 }
 
 .ancho-28 {
+  display: inline-block;
   width: 28em;
 }
 
 .ancho-29 {
+  display: inline-block;
   width: 29em;
 }
 
 .ancho-30 {
+  display: inline-block;
   width: 30em;
 }
 

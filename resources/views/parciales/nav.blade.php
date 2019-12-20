@@ -27,8 +27,8 @@
             <div class="nav-item">
                 <a href="{{route('about')}}" class="nav-link {{desActivar('about')}}">@lang('About')</a>
             </div>
-            <div class="nav-item"> <a href="{{route('proyectos.index')}}"
-                    class="nav-link {{desActivar('proyectos.index')}}">Proyectos</a>
+            <div class="nav-item">
+                <a href="{{route('proyectos.index')}}" class="nav-link {{desActivar('proyectos.index')}}">Proyectos</a>
             </div>
             <div class="nav-item">
                 <a href="{{route('contacto')}}" class="nav-link {{desActivar('contacto')}}">@lang('Contact')</a>
@@ -38,6 +38,14 @@
                 <a href="{{route('login')}}" class="nav-link {{desActivar('login')}}">@lang('Login')</a>
             </div>
             @else
+            <div>
+                @if (auth()->user()->hasRole('administrador'))
+                <div class="nav-item">
+                    <a href="{{route('usuarios.index')}}"
+                        class="nav-link {{desActivar('usuarios.index')}}">@lang('Users')</a>
+                </div>
+                @endif
+            </div>
             <div class="nav-item">
                 <form method="POST" action="{{route('logout')}}">
                     @csrf

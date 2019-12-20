@@ -84,16 +84,13 @@ a.desactivado {
     background-color: aliceblue;
 }
 
-[class*="ancho-"] {
-    display: inline-block;
-}
-
 .sin-bordes {
     border: none;
 }
 
 @for $dato from 1 to 31 {
     .ancho-#{$dato} {
+        display: inline-block;
         width: $dato*1em;
     }
 }

@@ -36,4 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Condición para ver los usuarios
+     *
+     * @var string
+     *
+     * @return bool
+     */
+    public function hasRole(){
+        return $this->role === 'administrador';
+    }
 }

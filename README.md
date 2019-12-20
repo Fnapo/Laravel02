@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-<h1 align="center">Segunda parte del uso del framework Laravel con VS Code, depurado con XDEBUG Listen.</h1>
+<h1 align="center">Segunda y Tercera parte del uso del framework Laravel con VS Code, depurado con XDEBUG Listen.</h1>
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

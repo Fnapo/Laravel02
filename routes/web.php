@@ -14,12 +14,11 @@
 App::setlocale('es'); // Para avisos en castellano.
 /*
 App\User::create([
-'name' => 'Dolores Porcuna',
-'email' => 'fran_sopo@msn.com',
-'password' => bcrypt('fesopo1808'),
+    'name' => 'Josefa Porcuna',
+    'email' => 'josefa@msn.com',
+    'password' => bcrypt('fesopo1808'),
 ]); // Crea un usuario.
- */
-
+*/
 /*
 Comentada para usar las rutas creadas propias.
 Route::get('/', function () {
@@ -88,3 +87,10 @@ Auth::routes(['register' => false]);
 // Route::get('/home', 'HomeController@index')->name('home'); // Esta se puede ignorar. No es necesario borrar el controller asociado,
 // pero sí modificar los controllers login y register con: $redirecTo='/';
 // con 'register' => false se impide el acceso a ciertas rutas sin estar autentificado.
+
+Route::get('roles', function(){
+    return \App\Modelos\Role::with('user')->get();
+});
+
+// Ruta de prueba para ver el uso de hasOne y hasMany
+// Formato ----Modelo::with('submodelo')->get(); incluso paginate().

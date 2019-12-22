@@ -40,7 +40,7 @@
                         {{$usuario->email}}
                     </td>
                     <td class="celda">
-                        {{$usuario->role}}
+                        {{$usuario->role->funcion}}
                     </td>
                     <td class="celda">
                         <button type="button" class="caja-boton bordes-2">

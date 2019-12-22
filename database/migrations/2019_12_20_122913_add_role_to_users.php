@@ -15,7 +15,8 @@ class AddRoleToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('role')->after('password');
+            $table->bigInteger('role_id')->after('password')->nullable();
+            // 'role' para indicar la tabla relacionada (a la que apunta) en singular (mejor que en plural) más '_id'.
         });
     }
 
@@ -28,7 +29,7 @@ class AddRoleToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->dropColumn('role');
+            $table->dropColumn('role_id');
         });
     }
 }

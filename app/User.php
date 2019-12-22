@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -44,7 +43,27 @@ class User extends Authenticatable
      *
      * @return bool
      */
-    public function hasRole(){
-        return $this->role === 'administrador';
+    public function hasRole()
+    {
+        $roles = ['admin'];
+
+        foreach ($roles as $role) {
+            if ($this->role->key == $role) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Método que muestra el Role asociado
+     *
+     * @return Role
+     */
+    public function role()
+    {
+        return $this->belongsTo('App\Modelos\Role', 'role_id');
+        // role_id pertenece a User, es innecesario con este formato.
     }
 }

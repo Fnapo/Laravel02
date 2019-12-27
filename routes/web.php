@@ -14,11 +14,11 @@
 App::setlocale('es'); // Para avisos en castellano.
 /*
 App\User::create([
-    'name' => 'Josefa Porcuna',
-    'email' => 'josefa@msn.com',
-    'password' => bcrypt('fesopo1808'),
+'name' => 'Josefa Porcuna',
+'email' => 'josefa@msn.com',
+'password' => bcrypt('fesopo1808'),
 ]); // Crea un usuario.
-*/
+ */
 /*
 Comentada para usar las rutas creadas propias.
 Route::get('/', function () {
@@ -52,7 +52,8 @@ Llamada por nombre:
 route('usuarios')
  */
 
-// Route::view('/', 'propia', ['nombres' => $nombre]); No le veo sentido si hay parámetros, mejor con un controlador.
+// Route::view('/', 'propia', ['nombres' => $nombre]); // No le veo sentido si hay parámetros,
+// mejor con un controlador. Puede servir como pequeños test.
 // Route::view('/', 'welcome')->name('inicio'); // Así sí.
 
 // Rutas creadas para el tutorial.
@@ -88,9 +89,40 @@ Auth::routes(['register' => false]);
 // pero sí modificar los controllers login y register con: $redirecTo='/';
 // con 'register' => false se impide el acceso a ciertas rutas sin estar autentificado.
 
+/*
 Route::get('roles', function(){
-    return \App\Modelos\Role::with('user')->get();
+return \App\Modelos\Role::with('user')->get();
+});
+ */
+// Ruta de prueba para ver el uso de hasOne y hasMany
+// Formato --- Modelo::with('submodelo')->get(); incluso paginate()
+// O $modelo->submodelo;
+
+// Para crear una relación muchos a muchos creo dos modelos: Libro y Autor y sus migraciones.
+// Y el modelo pivot AutorLibro, aunque no sea necesario.
+// php ... make:model Modelos\Libro -m
+// php ... make:model Modelos\AutorLibro -mp
+// Pequeño test para la relación autor-libro, del tipo muchos a muchos.
+// De paso para la acción group.
+
+Route::middleware(['auth', 'biblio'])->group(function () {
+    /*
+    // Uso el singular por comodidad. Pero es mejor en plural ... /libros y /autores.
+    Route::get('/libro/{id}', function ($id) {
+    $libro = \App\Modelos\Libro::findOrFail($id);
+
+    return view('libros/libroShow', compact('libro'));
+    });
+
+    Route::get('/autor/{id}', function ($id) {
+    $autor = \App\Modelos\Autor::findOrFail($id);
+
+    return view('autores/autorShow', compact('autor'));
+    });
+     */
+    Route::resource('libros', 'LibroController');
+    Route::resource('autores', 'AutorController')->parameters(['autores' => 'autor']);
+    // Necesario pues de autores ---> autore.
 });
 
-// Ruta de prueba para ver el uso de hasOne y hasMany
-// Formato ----Modelo::with('submodelo')->get(); incluso paginate().
+// Test superado.

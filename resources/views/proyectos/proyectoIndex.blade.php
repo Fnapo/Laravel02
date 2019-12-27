@@ -23,20 +23,20 @@
 <div>
     <?php $vacio = "Sin proyectos para mostrar"; ?>
     <h1 class="texto-c">Proyectos</h1>
-    <br/>
+    <br />
     @auth
     <div class="texto-c">
         <button class="caja-boton bordes-2">
             <a class="boton-normal" href="{{route('proyectos.create')}}">{{'Crear un proyecto'}}</a>
         </button>
     </div>
-    <br/>
+    <br />
     @endauth
     @isset($proyectos)
     <div class="centraTabla">
+        @if ($proyectos->count() > 0)
         <table class="tabla tabla-i-b colapsada">
             <thead>
-                @if ($proyectos->count() > 0)
                 <tr>
                     <th class="celda">{{'Título del proyecto'}}</th>
                     @auth
@@ -45,14 +45,9 @@
                     </th>
                     @endauth
                 </tr>
-                @else
-                <tr>
-                    <th class="celda">{{$vacio}}</th>
-                </tr>
-                @endif
             </thead>
             <tbody>
-                @forelse ($proyectos as $proyecto)
+                @foreach ($proyectos as $proyecto)
                 <tr>
                     <td class="celda" title="Haz click para verlo">
                         <a class="color-az" href="{{route('proyectos.show', $proyecto->id)}}">{{$proyecto->titulo}}</a>
@@ -74,19 +69,20 @@
                     </td>
                     @endauth
                 </tr>
-                @empty
-                <tr>
-                    <td class="celda">{{$vacio}}</td>
-                </tr>
-                @endforelse
+                @endforeach
             </tbody>
             <tfoot></tfoot>
         </table>
         <div class="texto-c">{{$proyectos->links()}}</div>
+        @else
+        <h2 class="texto-c">
+            {{$vacio}}
+        </h2>
+        @endif
     </div>
     @else
     <!-- del isset -->
-    <h2>
+    <h2 class="texto-c">
         {{$vacio}}
     </h2>
     @endisset

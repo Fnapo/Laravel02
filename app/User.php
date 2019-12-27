@@ -37,9 +37,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Condición para ver los usuarios
-     *
-     * @var string
+     * Condición para ver los usuarios.
      *
      * @return bool
      */
@@ -57,9 +55,29 @@ class User extends Authenticatable
     }
 
     /**
+     * Condición para entrar en la Biblioteca.
+     *
+     * Prefiero la duplicación para mejor mantenimiento.
+     *
+     * @return bool
+     */
+    public function checkBiblio()
+    {
+        $roles = ['biblio'];
+
+        foreach ($roles as $role) {
+            if ($this->role->key == $role) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Método que muestra el Role asociado
      *
-     * @return Role
+     * @return App\Modelos\Role
      */
     public function role()
     {

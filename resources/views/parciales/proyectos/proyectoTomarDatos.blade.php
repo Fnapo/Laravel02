@@ -5,11 +5,11 @@
         <tbody>
             <tr class="alto-2 margen-r">
                 <td>
-                    <label class="ancho-10 texto-c fondo-alice fuente-20-bold">Título:</label>
+                    <label class="ancho-20 texto-c fondo-alice fuente-20-bold">Título del Proyecto:</label>
                 </td>
                 <td>
                     <input class="ancho-20 fondo-v fuente-20" type="text" name="titulo"
-                        value="{{old('titulo', $proyecto['titulo'])}}" placeholder="Título del proyecto ...">
+                        value="{{old('titulo', $proyecto['titulo'])}}" placeholder="Título ...">
                 </td>
             </tr>
             <tr>
@@ -19,11 +19,11 @@
             </tr>
             <tr class="alto-3 margen-r">
                 <td>
-                    <label class="ancho-10 texto-c fondo-alice fuente-20-bold">Descripción:</label>
+                    <label class="ancho-20 texto-c fondo-alice fuente-20-bold">Descripción del Proyecto:</label>
                 </td>
                 <td>
                     <textarea class="ancho-20 fondo-v margen alineado-v fuente-20" name="descripcion"
-                        placeholder="Descripción del proyecto ...">{{$proyecto == null
+                        placeholder="Descripción ...">{{$proyecto == null
                         ? old('descripcion') : old('descripcion', $proyecto['descripcion'])}}</textarea>
                 </td>
             </tr>

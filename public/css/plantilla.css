@@ -30,6 +30,7 @@ a.desactivado {
 
 [class*=boton-]:hover {
   background-color: aquamarine;
+  text-decoration: none;
 }
 
 .caja-boton {
@@ -248,8 +249,172 @@ a.desactivado {
   line-height: 3em;
 }
 
+.margen-0 {
+  margin: 0px;
+}
+
+.margen-1 {
+  margin: 1px;
+}
+
+.margen-2 {
+  margin: 2px;
+}
+
+.margen-3 {
+  margin: 3px;
+}
+
+.margen-4 {
+  margin: 4px;
+}
+
+.margen-5 {
+  margin: 5px;
+}
+
+.margen-6 {
+  margin: 6px;
+}
+
+.margen-7 {
+  margin: 7px;
+}
+
+.margen-8 {
+  margin: 8px;
+}
+
+.margen-9 {
+  margin: 9px;
+}
+
 .margen-10 {
   margin: 10px;
+}
+
+.margen-11 {
+  margin: 11px;
+}
+
+.margen-12 {
+  margin: 12px;
+}
+
+.margen-13 {
+  margin: 13px;
+}
+
+.margen-14 {
+  margin: 14px;
+}
+
+.margen-15 {
+  margin: 15px;
+}
+
+.margen-16 {
+  margin: 16px;
+}
+
+.margen-17 {
+  margin: 17px;
+}
+
+.margen-18 {
+  margin: 18px;
+}
+
+.margen-19 {
+  margin: 19px;
+}
+
+.margen-20 {
+  margin: 20px;
+}
+
+.pad-0 {
+  padding: 0px;
+}
+
+.pad-1 {
+  padding: 1px;
+}
+
+.pad-2 {
+  padding: 2px;
+}
+
+.pad-3 {
+  padding: 3px;
+}
+
+.pad-4 {
+  padding: 4px;
+}
+
+.pad-5 {
+  padding: 5px;
+}
+
+.pad-6 {
+  padding: 6px;
+}
+
+.pad-7 {
+  padding: 7px;
+}
+
+.pad-8 {
+  padding: 8px;
+}
+
+.pad-9 {
+  padding: 9px;
+}
+
+.pad-10 {
+  padding: 10px;
+}
+
+.pad-11 {
+  padding: 11px;
+}
+
+.pad-12 {
+  padding: 12px;
+}
+
+.pad-13 {
+  padding: 13px;
+}
+
+.pad-14 {
+  padding: 14px;
+}
+
+.pad-15 {
+  padding: 15px;
+}
+
+.pad-16 {
+  padding: 16px;
+}
+
+.pad-17 {
+  padding: 17px;
+}
+
+.pad-18 {
+  padding: 18px;
+}
+
+.pad-19 {
+  padding: 19px;
+}
+
+.pad-20 {
+  padding: 20px;
 }
 
 .centraTabla {
@@ -271,6 +436,10 @@ a.desactivado {
 .celda {
   border: 2px solid black;
   padding: 2px;
+}
+
+.sin-decoracion {
+  text-decoration: none;
 }
 
 a,
@@ -303,9 +472,5 @@ input {
 
 .alto-pantalla {
   height: 100vh;
-}
-
-.sin-margen {
-  margin: 0px;
 }
 

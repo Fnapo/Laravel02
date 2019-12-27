@@ -28,6 +28,7 @@ a.desactivado {
 
 [class*="boton-"]:hover {
     background-color: aquamarine;
+    text-decoration: none;
 }
 
 .caja-boton {
@@ -103,8 +104,16 @@ a.desactivado {
     line-height: 3em;
 }
 
-.margen-10 {
-    margin: 10px;
+@for $dato from 0 to 21 {
+    .margen-#{$dato} {
+        margin: $dato*1px;
+    }
+}
+
+@for $dato from 0 to 21 {
+    .pad-#{$dato} {
+        padding: $dato*1px;
+    }
 }
 
 .centraTabla {
@@ -126,6 +135,10 @@ a.desactivado {
 .celda {
     border: 2px solid black;
     padding: 2px;
+}
+
+.sin-decoracion {
+    text-decoration: none;
 }
 
 a,
@@ -156,8 +169,4 @@ input {
 
 .alto-pantalla {
     height: 100vh;
-}
-
-.sin-margen {
-    margin: 0px;
 }

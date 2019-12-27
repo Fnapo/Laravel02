@@ -39,7 +39,7 @@
             </div>
             @else
             <div>
-                @if (auth()->user()->hasRole('administrador'))
+                @if (auth()->user()->hasRole())
                 <div class="nav-item">
                     <a href="{{route('usuarios.index')}}"
                         class="nav-link {{desActivar('usuarios.index')}}">@lang('Users')</a>

@@ -19,6 +19,6 @@ class CheckRoles
             return $next($request);
         }
 
-        return redirect()->route('home')->with('estado', 'No estás autorizado ...');
+        return redirect()->route('home')->with('estado', 'No tienes permiso ...');
     }
 }

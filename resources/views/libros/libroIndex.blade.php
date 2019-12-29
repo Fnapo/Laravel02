@@ -5,9 +5,9 @@
 @section('contenido')
 <div>
     <?php $vacio = "Sin libros para mostrar"; ?>
-    <h1 class="texto-c">{{'Libros'}}</h1>
+    <h1 class="texto-hc">{{'Libros'}}</h1>
     <br />
-    <div class="texto-c">
+    <div class="texto-hc">
         <button class="caja-boton bordes-2">
             <a class="boton-normal" href="{{route('libros.create')}}">{{'Adquirir un libro'}}</a>
         </button>
@@ -19,16 +19,8 @@
         <table class="tabla tabla-i-b colapsada">
             <thead>
                 <tr>
-                    <th class="celda" rowspan="2">{{'Título del libro'}}</th>
-                    <th class="celda" colspan="2">{{'Ejemplares'}}</th>
-                    <th class="celda" rowspan="2">{{'Autor(es)'}}</th>
-                    <th class="celda" colspan="2" rowspan="2">
-                        {{'Acciones'}}
-                    </th>
-                </tr>
-                <tr>
-                    <th class="celda">{{'Obtenidos'}}</th>
-                    <th class="celda">{{'Disponibles'}}</th>
+                    <th class="celda">{{'Título del libro'}}</th>
+                    <th class="celda"> {{'Acciones'}} </th>
                 </tr>
             </thead>
             <tbody>
@@ -38,50 +30,25 @@
                         {{$libro->titulo}}
                     </td>
                     <td class="celda">
-                        {{$libro->obtenidos}}
-                    </td>
-                    <td class="celda">
-                        {{$libro->disponibles}}
-                    </td>
-                    <td class="celda">
-                        <ul class="margen-0 pad-0">
-                            @forelse ($libro->autores as $autor)
-                            <li style="list-style-type:none">
-                                <a href="{{route('autores.show', $autor)}}">
-                                    {{$autor->nombre.' '.$autor->apellidos}}</a>
-                            </li>
-                            @empty
-                            <li style="list-style-type:none">{{'Anónimo'}}</li>
-                            @endforelse
-                        </ul>
-                    </td>
-                    <td class="celda">
                         <button type="button" class="caja-boton bordes-2">
-                            <a class="boton-normal" href="{{route('libros.edit', $libro)}}">{{'Editar'}}</a>
+                            <a class="boton-normal" href="{{route('libros.show', $libro)}}">{{'Detalles'}}</a>
                         </button>
-                    </td>
-                    <td class="celda">
-                        <form method="POST" action="{{route('libros.destroy', $libro)}}">
-                            @csrf
-                            @method("DELETE")
-                            <input type="submit" class="boton-peligro pad-4" value="Borrar">
-                        </form>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
             <tfoot></tfoot>
         </table>
-        <div class="texto-c">{{$libros->links()}}</div>
+        <div class="texto-hc">{{$libros->links()}}</div>
         @else
-        <h2 class="texto-c">
+        <h2 class="texto-hc">
             {{$vacio}}
         </h2>
         @endif
     </div>
     @else
     <!-- del isset -->
-    <h2 class="texto-c">
+    <h2 class="texto-hc">
         {{$vacio}}
     </h2>
     @endisset

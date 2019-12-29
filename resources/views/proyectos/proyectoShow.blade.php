@@ -7,7 +7,7 @@ Proyectos | {{$proyecto->titulo}}
 
 @section('content')
 <div>
-    <h1 class="texto-c">Datos de {{$proyecto->titulo}}</h1>
+    <h1 class="texto-hc">Datos de {{$proyecto->titulo}}</h1>
     <br/>
     <?php
         $vacio='Proyecto vacío.';
@@ -48,7 +48,7 @@ Proyectos | {{$proyecto->titulo}}
         </table>
     </div>
     @else
-    <h2 class="texto-c">
+    <h2 class="texto-hc">
         {{$vacio}}
     </h2>
     @endisset

@@ -30,11 +30,11 @@
                 @include('parciales/estado-sesion')
             </header>
             <main>
-                @yield('contenido')
-                @yield('content')
+                @yield('contenido', '')
+                @yield('content', '')
                 <!-- Cambio por el uso de vistas de Laravel. -->
             </main>
-            <footer class="texto-c fondo-alice">
+            <footer class="texto-hc fondo-alice">
                 {{config('app.name')}} | Copyright &copy; {{date('Y')}}
             </footer>
         </div>

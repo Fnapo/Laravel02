@@ -5,7 +5,7 @@
         <tbody>
             <tr class="alto-2 margen-r">
                 <td>
-                    <label class="ancho-20 texto-c fondo-alice fuente-20-bold">Título del Proyecto:</label>
+                    <label class="ancho-20 texto-hc fondo-alice fuente-20-bold">Título del Proyecto:</label>
                 </td>
                 <td>
                     <input class="ancho-20 fondo-v fuente-20" type="text" name="titulo"
@@ -13,13 +13,15 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="texto-c color-r">
-                    <label>{{$errors->first('titulo')}}</label>
+                <td colspan="2" class="texto-hc color-r">
+                    <label>
+                        <strong>{{$errors->first('titulo')}}</strong>
+                    </label>
                 </td>
             </tr>
             <tr class="alto-3 margen-r">
                 <td>
-                    <label class="ancho-20 texto-c fondo-alice fuente-20-bold">Descripción del Proyecto:</label>
+                    <label class="ancho-20 texto-hc fondo-alice fuente-20-bold">Descripción del Proyecto:</label>
                 </td>
                 <td>
                     <textarea class="ancho-20 fondo-v margen alineado-v fuente-20" name="descripcion"
@@ -28,12 +30,14 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="texto-c color-r">
-                    <label>{{$errors->first('descripcion')}}</label>
+                <td colspan="2" class="texto-hc color-r">
+                    <label>
+                        <strong>{{$errors->first('descripcion')}}</strong>
+                    </label>
                 </td>
             </tr>
             <tr class="alto-3">
-                <td colspan="2" class="texto-c fuente-20-bold">
+                <td colspan="2" class="texto-hc fuente-20-bold">
                     {{'Estos datos se guardarán en una BD.'}}
                 </td>
             </tr>
@@ -44,7 +48,7 @@
 <div class="centraTabla">
     <table class="tabla-i-b">
         <thead></thead>
-        <tbody class="texto-c">
+        <tbody class="texto-hc">
             <tr>
                 <td>
                     <input class="ancho-15 boton-normal" type="submit">

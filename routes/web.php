@@ -105,7 +105,7 @@ return \App\Modelos\Role::with('user')->get();
 // Pequeño test para la relación autor-libro, del tipo muchos a muchos.
 // De paso para la acción group.
 
-Route::middleware(['auth', 'biblio'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     /*
     // Uso el singular por comodidad. Pero es mejor en plural ... /libros y /autores.
     Route::get('/libro/{id}', function ($id) {

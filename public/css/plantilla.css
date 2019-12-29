@@ -71,7 +71,7 @@ a.desactivado {
   color: red;
 }
 
-.texto-c {
+.texto-hc {
   text-align: center;
 }
 
@@ -472,5 +472,13 @@ input {
 
 .alto-pantalla {
   height: 100vh;
+}
+
+.texto-hl {
+  text-align: left;
+}
+
+.texto-hr {
+  text-align: right;
 }
 

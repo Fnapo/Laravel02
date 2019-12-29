@@ -6,14 +6,14 @@
 
 @section('contenido')
 <div>
-    <h1 class="texto-c">@lang('Home')</h1>
+    <h1 class="texto-hc">@lang('Home')</h1>
     <br />
     @auth
-    <h2 class="fondo-alice texto-c">
+    <h2 class="fondo-alice texto-hc">
         {{'Bienvenido: '.auth()->user()->name.'.'}}
     </h2>
     @else
-    <h2 class="fondo-alice texto-c">
+    <h2 class="fondo-alice texto-hc">
         {{'Bienvenido: '.($nombre ?? 'Invitado').'.'}}
     </h2>
     @endauth

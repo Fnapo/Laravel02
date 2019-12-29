@@ -5,6 +5,6 @@
 @endsection
 
 @section('contenido')
-<h1 class="texto-c">@lang('About')</h1>
+<h1 class="texto-hc">@lang('About')</h1>
 <br />
 @endsection

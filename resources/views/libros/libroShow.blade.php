@@ -4,7 +4,7 @@
 
 @section('contenido')
 <div>
-    <h1 class="texto-c">{{$libro->titulo}}</h1>
+    <h1 class="texto-hc">{{$libro->titulo}}</h1>
     <br />
     <div class="centraTabla">
         <table class="tabla tabla-i-b colapsada">

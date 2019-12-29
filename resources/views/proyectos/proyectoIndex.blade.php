@@ -22,10 +22,10 @@
 <!-- Para indentar -->
 <div>
     <?php $vacio = "Sin proyectos para mostrar"; ?>
-    <h1 class="texto-c">Proyectos</h1>
+    <h1 class="texto-hc">Proyectos</h1>
     <br />
     @auth
-    <div class="texto-c">
+    <div class="texto-hc">
         <button class="caja-boton bordes-2">
             <a class="boton-normal" href="{{route('proyectos.create')}}">{{'Crear un proyecto'}}</a>
         </button>
@@ -73,16 +73,16 @@
             </tbody>
             <tfoot></tfoot>
         </table>
-        <div class="texto-c">{{$proyectos->links()}}</div>
+        <div class="texto-hc">{{$proyectos->links()}}</div>
         @else
-        <h2 class="texto-c">
+        <h2 class="texto-hc">
             {{$vacio}}
         </h2>
         @endif
     </div>
     @else
     <!-- del isset -->
-    <h2 class="texto-c">
+    <h2 class="texto-hc">
         {{$vacio}}
     </h2>
     @endisset

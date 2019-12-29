@@ -7,10 +7,10 @@
 @section('contenido')
 <div>
     <?php $vacio = "Sin usuarios para mostrar"; ?>
-    <h1 class="texto-c">{{__('Users')}}</h1>
+    <h1 class="texto-hc">{{__('Users')}}</h1>
     <br />
     @auth
-    <div class="texto-c">
+    <div class="texto-hc">
         <button class="caja-boton bordes-2">
             <a class="boton-normal" href="{{route('usuarios.create')}}">{{'Crear un usuario'}}</a>
         </button>
@@ -60,7 +60,7 @@
             </tbody>
             <tfoot></tfoot>
         </table>
-        <div class="texto-c">{{$usuarios->links()}}</div>
+        <div class="texto-hc">{{$usuarios->links()}}</div>
     </div>
     @else
     <!-- del isset -->

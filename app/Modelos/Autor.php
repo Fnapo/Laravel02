@@ -9,6 +9,7 @@ class Autor extends Model
     //
     // Tabla asociada.
     protected $table = 'autores';
+    protected $guarded = [];
 
     public function libros()
     {

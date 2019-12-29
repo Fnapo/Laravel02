@@ -1,6 +1,6 @@
 @extends('plantilla')
 
-@section('nombre', $autor->nombre.' '.$autor->apellidos)
+@section('titulo', $autor->nombre.' '.$autor->apellidos)
 
 @section('contenido')
 <div>
@@ -9,7 +9,7 @@
         $desconocido='Desconocido(s)';
     ?>
     @isset($autor)
-    <h1 class="texto-c">{{$autor->nombre.' '.$autor->apellidos}}</h1>
+    <h1 class="texto-hc">{{$autor->nombre.' '.$autor->apellidos}}</h1>
     <br />
     <div class="centraTabla">
         <table class="tabla tabla-i-b colapsada">
@@ -73,7 +73,7 @@
     </div>
     @else
     <!-- del isset -->
-    <h2 class="texto-c">
+    <h2 class="texto-hc">
         {{$vacio}}
     </h2>
     @endisset

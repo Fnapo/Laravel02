@@ -7,7 +7,7 @@
 @section('contenido')
 <!-- Para indentar -->
 <div>
-    <h1 class="texto-c">@lang('Contact')</h1>
+    <h1 class="texto-hc">@lang('Contact')</h1>
     <br />
     <!-- Para soporat method="post" necesito un nuevo controlador.
         Como recibe el form necesito el método store -->
@@ -20,14 +20,14 @@
                 <tbody>
                     <tr class="alto-2 margen-r">
                         <td>
-                            <label class="ancho-10 texto-c fondo-alice sin-margen fuente-20-bold">Nombre:</label>
+                            <label class="ancho-10 texto-hc fondo-alice margen-0 fuente-20-bold">Nombre:</label>
                         </td>
                         <td>
                             <input class="ancho-15 fondo-v fuente-20" type="text" name="nombre"
                                 value="{{old('nombre')}}" placeholder="Tu nombre ...">
                         </td>
                         <td>
-                            <label class="ancho-10 texto-c fondo-alice sin-margen fuente-20-bold">email:</label>
+                            <label class="ancho-10 texto-hc fondo-alice margen-0 fuente-20-bold">email:</label>
                         </td>
                         <td>
                             <input class="ancho-15 fondo-v fuente-20" type="email" name="email"
@@ -35,23 +35,23 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="texto-c color-r">
+                        <td colspan="2" class="texto-hc color-r">
                             <label><strong>{{$errors->first('nombre')}}</strong></label>
                         </td>
-                        <td colspan="2" class="texto-c color-r">
+                        <td colspan="2" class="texto-hc color-r">
                             <label><strong>{{$errors->first('email')}}</strong></label>
                         </td>
                     </tr>
                     <tr class="alto-3 margen-r">
                         <td>
-                            <label class="ancho-10 texto-c fondo-alice sin-margen fuente-20-bold">Asunto:</label>
+                            <label class="ancho-10 texto-hc fondo-alice margen-0 fuente-20-bold">Asunto:</label>
                         </td>
                         <td>
                             <input class="ancho-15 fondo-v fuente-20" type="text" name="asunto"
                                 value="{{old('asunto')}}" placeholder="Asunto del correo ...">
                         </td>
                         <td>
-                            <label class="ancho-10 texto-c fondo-alice sin-margen fuente-20-bold">Mensaje:</label>
+                            <label class="ancho-10 texto-hc fondo-alice margen-0 fuente-20-bold">Mensaje:</label>
                         </td>
                         <td>
                             <textarea class="ancho-15 fondo-v fuente-20" name="mensaje"
@@ -59,20 +59,20 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="texto-c color-r">
+                        <td colspan="2" class="texto-hc color-r">
                             <label><strong>{{$errors->first('asunto')}}</strong></label>
                         </td>
-                        <td colspan="2" class="texto-c color-r">
+                        <td colspan="2" class="texto-hc color-r">
                             <label><strong>{{$errors->first('mensaje')}}</strong></label>
                         </td>
                     </tr>
                     <tr class="alto-3">
-                        <td colspan="4" class="texto-c fuente-20-bold">
+                        <td colspan="4" class="texto-hc fuente-20-bold">
                             {{'Tus datos no se publicarán'}}
                         </td>
                     </tr>
                 </tbody>
-                <tfoot class="texto-c">
+                <tfoot class="texto-hc">
                     <tr>
                         <td colspan="2">
                             <input type="submit" class="ancho-15 boton-normal" type="submit">
@@ -86,22 +86,22 @@
         </div>
         <!--
     <p class="alto2">
-        <label class="ancho10 texto-c fondo-alice sin-margen">Nombre:</label>
+        <label class="ancho10 texto-hc fondo-alice margen-0">Nombre:</label>
         <input class="ancho-15 fondo-v" type="text" name="nombre"
              placeholder="Tu nombre ..."><br />
         <label class=""></label>
     </p>
     <p class="alto2">
-        <label class="ancho10 texto-c fondo-alice sin-margen">email:</label>
+        <label class="ancho10 texto-hc fondo-alice margen-0">email:</label>
         <input class="ancho-15 fondo-v" type="email" name="email" placeholder="Tu email ...">
     </p>
     <p class="alto2">
-        <label class="ancho10 texto-c fondo-alice sin-margen">Asunto:</label>
+        <label class="ancho10 texto-hc fondo-alice margen-0">Asunto:</label>
         <input class="ancho-15 fondo-v" type="text" name="asunto"
              placeholder="Asunto del correo ...">
     </p>
     <p class="alto3">
-        <label class="ancho10 texto-c fondo-alice sin-margen">Mensaje:</label>
+        <label class="ancho10 texto-hc fondo-alice margen-0">Mensaje:</label>
         <textarea class="ancho-15 fondo-v margen" name="mensaje" "
             placeholder="Tu mensaje ..."></textarea>
 

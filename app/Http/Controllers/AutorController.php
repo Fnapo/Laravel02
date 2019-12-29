@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Modelos\Autor;
 use Illuminate\Http\Request;
+use App\Http\Requests\DatosAutorRequest;
 
 class AutorController extends Controller
 {
@@ -28,17 +29,23 @@ class AutorController extends Controller
     public function create()
     {
         //
+        return view('autores/autorCreate', ['autor' => null]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\DatosAutorRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DatosAutorRequest $request)
     {
         //
+        $datos = $request->validated();
+
+        Autor::create($datos);
+
+        return redirect()->route('autores.index')->with('estado', 'Autor dado de alta ...');
     }
 
     /**
@@ -64,18 +71,24 @@ class AutorController extends Controller
     public function edit(Autor $autor)
     {
         //
+        return view('autores/autorEdit', compact('autor'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\DatosAutorRequest  $request
      * @param  \App\Modelos\Autor  $autor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Autor $autor)
+    public function update(DatosAutorRequest $request, Autor $autor)
     {
         //
+        $datos = $request->validated();
+
+        $autor->update($datos);
+
+        return redirect()->route('autores.show', compact('autor'))->with('estado', 'Autor modificado ...');
     }
 
     /**

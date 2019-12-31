@@ -34,7 +34,7 @@
                 @yield('content', '')
                 <!-- Cambio por el uso de vistas de Laravel. -->
             </main>
-            <footer class="texto-hc fondo-alice">
+            <footer class="texto-hc fondo-blanco">
                 {{config('app.name')}} | Copyright &copy; {{date('Y')}}
             </footer>
         </div>

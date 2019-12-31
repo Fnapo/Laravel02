@@ -41,12 +41,13 @@ class User extends Authenticatable
      *
      * @return bool
      */
-    public function hasRole()
+    public function checkAdmin()
     {
         $roles = ['admin'];
 
-        foreach ($roles as $role) {
-            if ($this->role->key == $role) {
+        //foreach ($this->roles as $role)
+        {
+            if (in_array($this->role->key, $roles)) {
                 return true;
             }
         }
@@ -57,7 +58,7 @@ class User extends Authenticatable
     /**
      * Condición para entrar en la Biblioteca.
      *
-     * Prefiero la duplicación para mejor mantenimiento.
+     * Prefiero la duplicación para mejor mantenimiento y comprensión.
      *
      * @return bool
      */
@@ -65,8 +66,9 @@ class User extends Authenticatable
     {
         $roles = ['biblio'];
 
-        foreach ($roles as $role) {
-            if ($this->role->key == $role) {
+        // foreach ($this->roles as $role)
+        {
+            if (in_array($this->$role->key, $roles)) {
                 return true;
             }
         }

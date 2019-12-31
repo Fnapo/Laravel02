@@ -26,6 +26,7 @@ class NuevoLibroRequest extends FormRequest
     {
         return [
             //
+            'otro' => 'required',
             'titulo' => 'required',
             'obtenidos' => 'required|integer|min:1',
         ];

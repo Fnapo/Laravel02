@@ -10,7 +10,7 @@
 
 function desActivar(string $nombre = "home")
 {
-    return (\Route::currentRouteName() == $nombre ? 'desactivado active' : 'color-az');
+    return (\Route::currentRouteName() == $nombre ? 'desactivado active' : 'color-azul');
 }
 
 /*

@@ -26,6 +26,7 @@ class ModificarLibroRequest extends FormRequest
     {
         return [
             //
+            'otro' => 'required',
             'titulo' => 'required',
             'obtenidos' => 'required|integer|min:1',
             'disponibles' => 'required|integer|between:0,' . $this->obtenidos,

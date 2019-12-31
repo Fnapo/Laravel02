@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\NuevoLibroRequest;
 use App\Http\Requests\ModificarLibroRequest;
+use App\Http\Requests\NuevoLibroRequest;
 use App\Modelos\Libro;
 use Illuminate\Http\Request;
 
@@ -49,7 +49,7 @@ class LibroController extends Controller
         //
         $datos = $request->validated();
         $datos['disponibles'] = $datos['obtenidos'];
-
+        $autor = array_shift($datos);
         Libro::create($datos);
 
         return redirect()->route('libros.index')->with('estado', 'Libro adquirido ...');
@@ -92,6 +92,7 @@ class LibroController extends Controller
     {
         //
         $datos = $request->validated();
+        $nuevoAutor = array_shift($datos);
 
         $libro->update($datos);
 

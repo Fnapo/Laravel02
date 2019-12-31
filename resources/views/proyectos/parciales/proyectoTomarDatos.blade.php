@@ -3,12 +3,12 @@
     <table class="tabla-i-b">
         <thead></thead>
         <tbody>
-            <tr class="alto-2 margen-r">
+            <tr>
                 <td>
-                    <label class="ancho-20 texto-hc fondo-alice fuente-20-bold">Título del Proyecto:</label>
+                    <label class="ancho-20 texto-hc fondo-naranja fuente-20-bold margen-0">Título del Proyecto:</label>
                 </td>
                 <td>
-                    <input class="ancho-20 fondo-v fuente-20" type="text" name="titulo"
+                    <input class="ancho-20 fondo-verdeMarOscuro fuente-20" type="text" name="titulo"
                         value="{{old('titulo', $proyecto['titulo'])}}" placeholder="Título ...">
                 </td>
             </tr>
@@ -19,12 +19,12 @@
                     </label>
                 </td>
             </tr>
-            <tr class="alto-3 margen-r">
+            <tr class="alto-3">
                 <td>
-                    <label class="ancho-20 texto-hc fondo-alice fuente-20-bold">Descripción del Proyecto:</label>
+                    <label class="ancho-20 texto-hc fondo-naranja fuente-20-bold margen-0">Descripción del Proyecto:</label>
                 </td>
                 <td>
-                    <textarea class="ancho-20 fondo-v margen alineado-v fuente-20" name="descripcion"
+                    <textarea class="ancho-20 fondo-verdeMarOscuro alineado-v fuente-20" name="descripcion"
                         placeholder="Descripción ...">{{$proyecto == null
                         ? old('descripcion') : old('descripcion', $proyecto['descripcion'])}}</textarea>
                 </td>
@@ -52,9 +52,6 @@
             <tr>
                 <td>
                     <input class="ancho-15 boton-normal" type="submit">
-                </td>
-                <td>
-                    <input class="ancho-15 boton-normal" type="reset">
                 </td>
             </tr>
         </tbody>

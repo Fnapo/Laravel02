@@ -15,7 +15,7 @@ class CheckRoles
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->user()->hasRole()) {
+        if (auth()->user()->checkAdmin()) {
             return $next($request);
         }
 

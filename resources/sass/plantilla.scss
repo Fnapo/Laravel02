@@ -49,14 +49,6 @@ a.desactivado {
     cursor: pointer;
 }
 
-.color-az {
-    color: blue;
-}
-
-.fondo-v {
-    background-color: darkseagreen;
-}
-
 .boton-normal {
     background-color: olive;
 }
@@ -73,15 +65,11 @@ a.desactivado {
     text-align: center;
 }
 
-[class*="fuente-20"] {
-    font-size: 20px;
-}
-
 [class*="-bold"] {
     font-weight: bolder;
 }
 
-.fondo-alice {
+.fondo-naranja {
     background-color: aliceblue;
 }
 
@@ -93,6 +81,28 @@ a.desactivado {
     .ancho-#{$dato} {
         display: inline-block;
         width: $dato*1em;
+    }
+    @if $dato>11 {
+        [class*="fuente-#{$dato}"] {
+            font-size: $dato*1px;
+        }
+    }
+    @else {
+        [class*="fuente-#{$dato}"] {
+            font-size: 10px;
+        }
+    }
+}
+
+@import 'misColores';
+@each $color in map-keys($color-mapa) {
+    @each $tono in map-keys($tono-mapa) {
+        .fondo-#{$color}#{$tono} {
+            background-color: #{map-get($tono-mapa, $tono)+map-get($color-mapa, $color)};
+        }
+        .color-#{$color}#{$tono} {
+            color: #{map-get($tono-mapa, $tono)+map-get($color-mapa, $color)};
+        }
     }
 }
 
@@ -150,12 +160,12 @@ input {
     border: 2px solid transparent;
 }
 
-.nav-pills .nav-item .color-az {
+.nav-pills .nav-item .color-azul {
     border: 2px solid transparent;
     background-color: lightgreen;
 }
 
-.nav-pills .nav-item .color-az:hover {
+.nav-pills .nav-item .color-azul:hover {
     border: 2px solid black;
 }
 

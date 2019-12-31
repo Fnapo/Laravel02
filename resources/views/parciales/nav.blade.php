@@ -39,7 +39,7 @@
             </div>
             @else
             <div>
-                @if (auth()->user()->hasRole())
+                @if (auth()->user()->checkAdmin())
                 <div class="nav-item">
                     <a href="{{route('usuarios.index')}}"
                         class="nav-link {{desActivar('usuarios.index')}}">@lang('Users')</a>
@@ -49,7 +49,7 @@
             <div class="nav-item">
                 <form method="POST" action="{{route('logout')}}">
                     @csrf
-                    <button type="submit" class="nav-link color-az">
+                    <button type="submit" class="nav-link color-azul">
                         @lang('Logout')
                     </button>
                 </form>

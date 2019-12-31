@@ -50,7 +50,7 @@
                 @foreach ($proyectos as $proyecto)
                 <tr>
                     <td class="celda" title="Haz click para verlo">
-                        <a class="color-az" href="{{route('proyectos.show', $proyecto->id)}}">{{$proyecto->titulo}}</a>
+                        <a class="color-azul" href="{{route('proyectos.show', $proyecto->id)}}">{{$proyecto->titulo}}</a>
                         <!-- route('nombre', parámetros)-->
                     </td>
                     @auth

@@ -51,14 +51,6 @@ a.desactivado {
   cursor: pointer;
 }
 
-.color-az {
-  color: blue;
-}
-
-.fondo-v {
-  background-color: darkseagreen;
-}
-
 .boton-normal {
   background-color: olive;
 }
@@ -75,15 +67,11 @@ a.desactivado {
   text-align: center;
 }
 
-[class*=fuente-20] {
-  font-size: 20px;
-}
-
 [class*=-bold] {
   font-weight: bolder;
 }
 
-.fondo-alice {
+.fondo-naranja {
   background-color: aliceblue;
 }
 
@@ -96,9 +84,17 @@ a.desactivado {
   width: 1em;
 }
 
+[class*=fuente-1] {
+  font-size: 10px;
+}
+
 .ancho-2 {
   display: inline-block;
   width: 2em;
+}
+
+[class*=fuente-2] {
+  font-size: 10px;
 }
 
 .ancho-3 {
@@ -106,9 +102,17 @@ a.desactivado {
   width: 3em;
 }
 
+[class*=fuente-3] {
+  font-size: 10px;
+}
+
 .ancho-4 {
   display: inline-block;
   width: 4em;
+}
+
+[class*=fuente-4] {
+  font-size: 10px;
 }
 
 .ancho-5 {
@@ -116,9 +120,17 @@ a.desactivado {
   width: 5em;
 }
 
+[class*=fuente-5] {
+  font-size: 10px;
+}
+
 .ancho-6 {
   display: inline-block;
   width: 6em;
+}
+
+[class*=fuente-6] {
+  font-size: 10px;
 }
 
 .ancho-7 {
@@ -126,9 +138,17 @@ a.desactivado {
   width: 7em;
 }
 
+[class*=fuente-7] {
+  font-size: 10px;
+}
+
 .ancho-8 {
   display: inline-block;
   width: 8em;
+}
+
+[class*=fuente-8] {
+  font-size: 10px;
 }
 
 .ancho-9 {
@@ -136,9 +156,17 @@ a.desactivado {
   width: 9em;
 }
 
+[class*=fuente-9] {
+  font-size: 10px;
+}
+
 .ancho-10 {
   display: inline-block;
   width: 10em;
+}
+
+[class*=fuente-10] {
+  font-size: 10px;
 }
 
 .ancho-11 {
@@ -146,9 +174,17 @@ a.desactivado {
   width: 11em;
 }
 
+[class*=fuente-11] {
+  font-size: 10px;
+}
+
 .ancho-12 {
   display: inline-block;
   width: 12em;
+}
+
+[class*=fuente-12] {
+  font-size: 12px;
 }
 
 .ancho-13 {
@@ -156,9 +192,17 @@ a.desactivado {
   width: 13em;
 }
 
+[class*=fuente-13] {
+  font-size: 13px;
+}
+
 .ancho-14 {
   display: inline-block;
   width: 14em;
+}
+
+[class*=fuente-14] {
+  font-size: 14px;
 }
 
 .ancho-15 {
@@ -166,9 +210,17 @@ a.desactivado {
   width: 15em;
 }
 
+[class*=fuente-15] {
+  font-size: 15px;
+}
+
 .ancho-16 {
   display: inline-block;
   width: 16em;
+}
+
+[class*=fuente-16] {
+  font-size: 16px;
 }
 
 .ancho-17 {
@@ -176,9 +228,17 @@ a.desactivado {
   width: 17em;
 }
 
+[class*=fuente-17] {
+  font-size: 17px;
+}
+
 .ancho-18 {
   display: inline-block;
   width: 18em;
+}
+
+[class*=fuente-18] {
+  font-size: 18px;
 }
 
 .ancho-19 {
@@ -186,9 +246,17 @@ a.desactivado {
   width: 19em;
 }
 
+[class*=fuente-19] {
+  font-size: 19px;
+}
+
 .ancho-20 {
   display: inline-block;
   width: 20em;
+}
+
+[class*=fuente-20] {
+  font-size: 20px;
 }
 
 .ancho-21 {
@@ -196,9 +264,17 @@ a.desactivado {
   width: 21em;
 }
 
+[class*=fuente-21] {
+  font-size: 21px;
+}
+
 .ancho-22 {
   display: inline-block;
   width: 22em;
+}
+
+[class*=fuente-22] {
+  font-size: 22px;
 }
 
 .ancho-23 {
@@ -206,9 +282,17 @@ a.desactivado {
   width: 23em;
 }
 
+[class*=fuente-23] {
+  font-size: 23px;
+}
+
 .ancho-24 {
   display: inline-block;
   width: 24em;
+}
+
+[class*=fuente-24] {
+  font-size: 24px;
 }
 
 .ancho-25 {
@@ -216,9 +300,17 @@ a.desactivado {
   width: 25em;
 }
 
+[class*=fuente-25] {
+  font-size: 25px;
+}
+
 .ancho-26 {
   display: inline-block;
   width: 26em;
+}
+
+[class*=fuente-26] {
+  font-size: 26px;
 }
 
 .ancho-27 {
@@ -226,9 +318,17 @@ a.desactivado {
   width: 27em;
 }
 
+[class*=fuente-27] {
+  font-size: 27px;
+}
+
 .ancho-28 {
   display: inline-block;
   width: 28em;
+}
+
+[class*=fuente-28] {
+  font-size: 28px;
 }
 
 .ancho-29 {
@@ -236,9 +336,353 @@ a.desactivado {
   width: 29em;
 }
 
+[class*=fuente-29] {
+  font-size: 29px;
+}
+
 .ancho-30 {
   display: inline-block;
   width: 30em;
+}
+
+[class*=fuente-30] {
+  font-size: 30px;
+}
+
+.fondo-naranja {
+  background-color: orange;
+}
+
+.color-naranja {
+  color: orange;
+}
+
+.fondo-naranjaOscuro {
+  background-color: darkorange;
+}
+
+.color-naranjaOscuro {
+  color: darkorange;
+}
+
+.fondo-naranjaClaro {
+  background-color: lightorange;
+}
+
+.color-naranjaClaro {
+  color: lightorange;
+}
+
+.fondo-amarillo {
+  background-color: yellow;
+}
+
+.color-amarillo {
+  color: yellow;
+}
+
+.fondo-amarilloOscuro {
+  background-color: darkyellow;
+}
+
+.color-amarilloOscuro {
+  color: darkyellow;
+}
+
+.fondo-amarilloClaro {
+  background-color: lightyellow;
+}
+
+.color-amarilloClaro {
+  color: lightyellow;
+}
+
+.fondo-verde {
+  background-color: green;
+}
+
+.color-verde {
+  color: green;
+}
+
+.fondo-verdeOscuro {
+  background-color: darkgreen;
+}
+
+.color-verdeOscuro {
+  color: darkgreen;
+}
+
+.fondo-verdeClaro {
+  background-color: lightgreen;
+}
+
+.color-verdeClaro {
+  color: lightgreen;
+}
+
+.fondo-rojo {
+  background-color: red;
+}
+
+.color-rojo {
+  color: red;
+}
+
+.fondo-rojoOscuro {
+  background-color: darkred;
+}
+
+.color-rojoOscuro {
+  color: darkred;
+}
+
+.fondo-rojoClaro {
+  background-color: lightred;
+}
+
+.color-rojoClaro {
+  color: lightred;
+}
+
+.fondo-cian {
+  background-color: cyan;
+}
+
+.color-cian {
+  color: cyan;
+}
+
+.fondo-cianOscuro {
+  background-color: darkcyan;
+}
+
+.color-cianOscuro {
+  color: darkcyan;
+}
+
+.fondo-cianClaro {
+  background-color: lightcyan;
+}
+
+.color-cianClaro {
+  color: lightcyan;
+}
+
+.fondo-blanco {
+  background-color: white;
+}
+
+.color-blanco {
+  color: white;
+}
+
+.fondo-blancoOscuro {
+  background-color: darkwhite;
+}
+
+.color-blancoOscuro {
+  color: darkwhite;
+}
+
+.fondo-blancoClaro {
+  background-color: lightwhite;
+}
+
+.color-blancoClaro {
+  color: lightwhite;
+}
+
+.fondo-negro {
+  background-color: black;
+}
+
+.color-negro {
+  color: black;
+}
+
+.fondo-negroOscuro {
+  background-color: darkblack;
+}
+
+.color-negroOscuro {
+  color: darkblack;
+}
+
+.fondo-negroClaro {
+  background-color: lightblack;
+}
+
+.color-negroClaro {
+  color: lightblack;
+}
+
+.fondo-oliva {
+  background-color: olive;
+}
+
+.color-oliva {
+  color: olive;
+}
+
+.fondo-olivaOscuro {
+  background-color: darkolive;
+}
+
+.color-olivaOscuro {
+  color: darkolive;
+}
+
+.fondo-olivaClaro {
+  background-color: lightolive;
+}
+
+.color-olivaClaro {
+  color: lightolive;
+}
+
+.fondo-azul {
+  background-color: blue;
+}
+
+.color-azul {
+  color: blue;
+}
+
+.fondo-azulOscuro {
+  background-color: darkblue;
+}
+
+.color-azulOscuro {
+  color: darkblue;
+}
+
+.fondo-azulClaro {
+  background-color: lightblue;
+}
+
+.color-azulClaro {
+  color: lightblue;
+}
+
+.fondo-violeta {
+  background-color: violet;
+}
+
+.color-violeta {
+  color: violet;
+}
+
+.fondo-violetaOscuro {
+  background-color: darkviolet;
+}
+
+.color-violetaOscuro {
+  color: darkviolet;
+}
+
+.fondo-violetaClaro {
+  background-color: lightviolet;
+}
+
+.color-violetaClaro {
+  color: lightviolet;
+}
+
+.fondo-lima {
+  background-color: lime;
+}
+
+.color-lima {
+  color: lime;
+}
+
+.fondo-limaOscuro {
+  background-color: darklime;
+}
+
+.color-limaOscuro {
+  color: darklime;
+}
+
+.fondo-limaClaro {
+  background-color: lightlime;
+}
+
+.color-limaClaro {
+  color: lightlime;
+}
+
+.fondo-verdeMar {
+  background-color: seagreen;
+}
+
+.color-verdeMar {
+  color: seagreen;
+}
+
+.fondo-verdeMarOscuro {
+  background-color: darkseagreen;
+}
+
+.color-verdeMarOscuro {
+  color: darkseagreen;
+}
+
+.fondo-verdeMarClaro {
+  background-color: lightseagreen;
+}
+
+.color-verdeMarClaro {
+  color: lightseagreen;
+}
+
+.fondo-rosa {
+  background-color: pink;
+}
+
+.color-rosa {
+  color: pink;
+}
+
+.fondo-rosaOscuro {
+  background-color: darkpink;
+}
+
+.color-rosaOscuro {
+  color: darkpink;
+}
+
+.fondo-rosaClaro {
+  background-color: lightpink;
+}
+
+.color-rosaClaro {
+  color: lightpink;
+}
+
+.fondo-gris {
+  background-color: grey;
+}
+
+.color-gris {
+  color: grey;
+}
+
+.fondo-grisOscuro {
+  background-color: darkgrey;
+}
+
+.color-grisOscuro {
+  color: darkgrey;
+}
+
+.fondo-grisClaro {
+  background-color: lightgrey;
+}
+
+.color-grisClaro {
+  color: lightgrey;
 }
 
 .alto-2 {
@@ -451,12 +895,12 @@ input {
   border: 2px solid transparent;
 }
 
-.nav-pills .nav-item .color-az {
+.nav-pills .nav-item .color-azul {
   border: 2px solid transparent;
   background-color: lightgreen;
 }
 
-.nav-pills .nav-item .color-az:hover {
+.nav-pills .nav-item .color-azul:hover {
   border: 2px solid black;
 }
 

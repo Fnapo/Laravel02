@@ -24,6 +24,7 @@
             o \Route::currentRouteName()
             Route esta definida en \vendor\laravel\...\Route.php como hija de la clase static Facade -->
             <header>
+                <h1 class="texto-hc fondo-oliva">Una pequeña aplicación con Laravel ...</h1>
                 @include('parciales/nav')
                 <!-- Es idéntico a include('parciales.nav') -->
                 <!-- También vale ('./parciales/nav'), con ./ es un poco más engorroso la visión del link, pero siempre sin .blade.php -->

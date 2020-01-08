@@ -21,38 +21,57 @@
             <!-- Cambia como obtener el nombre de la ruta actual, se hace con \Route::current()->getName()
             o \Route::currentRouteName()
             Route esta definida en \vendor\laravel\...\Route.php como hija de la clase static Facade -->
-            <div class="nav-item">
+            <div class="nav-item margen-5">
                 <a href="{{route('home')}}" class="nav-link {{desActivar('home')}}">@lang('Home')</a>
             </div>
-            <div class="nav-item">
+            <div class="nav-item margen-5">
                 <a href="{{route('about')}}" class="nav-link {{desActivar('about')}}">@lang('About')</a>
             </div>
-            <div class="nav-item">
+            <div class="nav-item margen-5">
                 <a href="{{route('proyectos.index')}}" class="nav-link {{desActivar('proyectos.index')}}">Proyectos</a>
             </div>
-            <div class="nav-item">
+            <div class="nav-item margen-5">
                 <a href="{{route('contacto')}}" class="nav-link {{desActivar('contacto')}}">@lang('Contact')</a>
             </div>
             @guest
-            <div class="nav-item">
+            <div class="nav-item margen-5">
                 <a href="{{route('login')}}" class="nav-link {{desActivar('login')}}">@lang('Login')</a>
             </div>
             @else
-            <div>
-                @if (auth()->user()->checkAdmin())
-                <div class="nav-item">
-                    <a href="{{route('usuarios.index')}}"
-                        class="nav-link {{desActivar('usuarios.index')}}">@lang('Users')</a>
+            <div class="nav-item margen-5 ancho-15 dropdown">
+                <div id="my-dropdown" class="nav-link color-azul dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">{{auth()->user()->getNombre()}}</div>
+                <div class="nav-pills dropdown-menu" aria-labelledby="my-dropdown">
+                    @if (auth()->user()->checkAdmin())
+                    <div class="dropdown-item nav-item">
+                        <a href="{{route('usuarios.index')}}"
+                            class="dropdown-item nav-link {{desActivar('usuarios.index')}}">@lang('Users')</a>
+                    </div>
+                    <div class="dropdown-item nav-item">
+                        <a class="dropdown-item nav-link {{desActivar('roles.index')}}"
+                            href="{{route('roles.index')}}">Roles</a>
+                    </div>
+                    @endif
+                    @if (auth()->user()->checkBiblio())
+                    {{-- b-dropdown crea automáticamente un menu dop. --}}
+                    <div class="dropdown-item nav-item">
+                        <a href="{{route('autores.index')}}"
+                            class="{{desActivar('autores.index')}} nav-link">{{'Autores'}}</a>
+                    </div>
+                    <div class="dropdown-item nav-item">
+                        <a href="{{route('libros.index')}}"
+                            class="{{desActivar('libros.index')}} nav-link">{{'Libros'}}</a>
+                    </div>
+                    @endif
+                    <div class="dropdown-item nav-item">
+                        <form method="POST" action="{{route('logout')}}">
+                            @csrf
+                            <button type="submit" class="nav-link color-azul">
+                                @lang('Logout')
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                @endif
-            </div>
-            <div class="nav-item">
-                <form method="POST" action="{{route('logout')}}">
-                    @csrf
-                    <button type="submit" class="nav-link color-azul">
-                        @lang('Logout')
-                    </button>
-                </form>
             </div>
             @endguest
         </div>

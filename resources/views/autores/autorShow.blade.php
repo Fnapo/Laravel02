@@ -42,11 +42,16 @@
                     <td class="celda">
                         {{$autor->murio??$desconocido}}
                     </td>
-                    <td class="celda">
+                    <td class="celda texto-hr">
                         <ul class="margen-0 pad-0">
                             @forelse ($autor->libros as $libro)
                             <li style="list-style-type:none">
-                                <a href="{{route('libros.show', $libro)}}">{{$libro->titulo}}</a>
+                                <form method="POST" action="{{route('autorlibro.destroy', [$autor, $libro])}}">
+                                    @csrf
+                                    @method("DELETE")
+                                    <a href="{{route('libros.show', $libro)}}">{{$libro->titulo}}</a>
+                                    <input type="submit" class="boton-peligro pad-4" value="Desligar">
+                                </form>
                             </li>
                             @empty
                             <li style="list-style-type:none">{{'Sin libros disponibles'}}</li>

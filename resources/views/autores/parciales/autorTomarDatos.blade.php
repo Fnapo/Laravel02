@@ -13,7 +13,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="texto-hc color-r">
+                <td colspan="2" class="texto-hc color-rojo">
                     <label>
                         <strong>{{$errors->first('nombre')}}</strong>
                     </label>
@@ -29,7 +29,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="texto-hc color-r">
+                <td colspan="2" class="texto-hc color-rojo">
                     <label>
                         <strong>{{$errors->first('apellidos')}}</strong>
                     </label>
@@ -45,12 +45,13 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="texto-hc color-r">
+                <td colspan="2" class="texto-hc color-rojo">
                     <label>
                         <strong>{{$errors->first('nacio')}}</strong>
                     </label>
                 </td>
             </tr>
+            <tr>
                 <td>
                     <label class="ancho-10 texto-hc fondo-naranja fuente-20-bold margen-0">Defunción:</label>
                 </td>
@@ -60,7 +61,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="texto-hc color-r">
+                <td colspan="2" class="texto-hc color-rojo">
                     <label>
                         <strong>{{$errors->first('murio')}}</strong>
                     </label>

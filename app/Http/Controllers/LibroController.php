@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ModificarLibroRequest;
-use App\Http\Requests\NuevoLibroRequest;
+use App\Http\Requests\DatosLibroRequest;
+use App\Modelos\Autor;
 use App\Modelos\Libro;
 use Illuminate\Http\Request;
 
@@ -11,8 +11,27 @@ class LibroController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth'); // Protección de ciertas rutas.
-        //$this->middleware('biblio'); // Protección de ciertas rutas.
+        $this->middleware('auth'); // Protección de ciertas rutas.
+        $this->middleware('biblio'); // Protección de ciertas rutas.
+    }
+
+    /**
+     * Función para evitar datos erróneos en una relación Autor-Libro.
+     *
+     */
+    protected function controlarAutores(array $autores, Libro $libro)
+    {
+        // Primer contol si se ha elegido Anónimo.
+        if (in_array(Autor::valor(), $autores)) {
+            $autores = [];
+        }
+        // Segundo control si es un Autor que no está en la BD.
+        Autor::findOrFail($autores);
+        // Camino normal.
+        $controlador = new AutorLibroController;
+        foreach ($autores as $autor) {
+            $controlador->store($autor, $libro->id);
+        }
     }
 
     /**
@@ -41,16 +60,17 @@ class LibroController extends Controller
 /**
  * Store a newly created resource in storage.
  *
- * @param  \App\Http\Requests\NuevoLibroRequest $request
+ * @param  \App\Http\Requests\DatosLibroRequest $request
  * @return \Illuminate\Http\Response
  */
-    public function store(NuevoLibroRequest $request)
+    public function store(DatosLibroRequest $request)
     {
         //
         $datos = $request->validated();
         $datos['disponibles'] = $datos['obtenidos'];
-        $autor = array_shift($datos);
-        Libro::create($datos);
+        $autores = array_shift($datos);
+        $libro = Libro::create($datos);
+        $this->controlarAutores($autores, $libro);
 
         return redirect()->route('libros.index')->with('estado', 'Libro adquirido ...');
     }
@@ -78,23 +98,27 @@ class LibroController extends Controller
     public function edit(Libro $libro)
     {
         //
+        $libro = Libro::findOrFail($libro->id);
+
         return view('libros/libroEdit', compact('libro'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\ModificarLibroRequest  $request
+     * @param  \App\Http\Requests\DatosLibroRequest  $request
      * @param  \App\Modelos\Libro  $libro
      * @return \Illuminate\Http\Response
      */
-    public function update(ModificarLibroRequest $request, Libro $libro)
+    public function update(DatosLibroRequest $request, Libro $libro)
     {
         //
         $datos = $request->validated();
-        $nuevoAutor = array_shift($datos);
+        $autores = array_shift($datos);
+        $libro = Libro::findOrFail($libro->id);
 
         $libro->update($datos);
+        $this->controlarAutores($autores, $libro);
 
         return redirect()->route('libros.show', compact('libro'))->with('estado', 'Libro modificado ...');
     }

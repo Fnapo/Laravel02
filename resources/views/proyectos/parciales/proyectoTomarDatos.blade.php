@@ -13,7 +13,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="texto-hc color-r">
+                <td colspan="2" class="texto-hc color-rojo">
                     <label>
                         <strong>{{$errors->first('titulo')}}</strong>
                     </label>
@@ -30,7 +30,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="texto-hc color-r">
+                <td colspan="2" class="texto-hc color-rojo">
                     <label>
                         <strong>{{$errors->first('descripcion')}}</strong>
                     </label>

@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DatosUserRequest;
 use App\User;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function __construct()
+    /*
+    public function __construct() // No necesario por la función group
     {
-        $this->middleware('auth');
-        // Necesitamos otro middleware para evitar que ciertos usuarios @auth no puedan acceder a '/usuarios'.
-        $this->middleware('roles'); // Con parámetros roles:hola.
+    $this->middleware('auth');
+    // Necesitamos otro middleware para evitar que ciertos usuarios @auth no puedan acceder a '/usuarios'.
+    $this->middleware('roles'); // Con parámetros roles:hola.
     }
+     */
 
     /**
      * Display a listing of the resource.
@@ -35,17 +37,24 @@ class UserController extends Controller
     public function create()
     {
         //
+        return view('usuarios/userCreate', ['usuario' => null]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\DatosUserRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DatosUserRequest $request)
     {
         //
+        $datos = $request->validated();
+
+        $datos['bcifrado'] = $datos['password'];
+        User::create($datos);
+
+        return redirect()->route('usuarios.index')->with('estado', 'Usuario dado de alta ...');
     }
 
     /**
@@ -57,6 +66,9 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        $usuario = User::findOrFail($id);
+
+        return view('usuarios/userShow', compact('usuario'));
     }
 
     /**
@@ -68,18 +80,28 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $usuario = User::findOrFail($id);
+
+        return view('usuarios/userEdit', compact('usuario'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Request\DatosUserRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DatosUserRequest $request, $id)
     {
         //
+        $datos = $request->validated();
+        $usuario = User::findOrFail($id);
+
+        $datos['bcifrado'] = $datos['password'];
+        $usuario->update($datos);
+
+        return redirect()->route('usuarios.show', $id)->with('estado', 'Usuario modificado ...');
     }
 
     /**
@@ -91,5 +113,10 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $usuario = User::findOrFail($id);
+
+        $usuario->delete();
+
+        return redirect()->route('$usuarios.index')->with('estado', 'Usuario eliminado ...');
     }
 }

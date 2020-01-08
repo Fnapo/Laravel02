@@ -13,9 +13,22 @@
 
 App::setlocale('es'); // Para avisos en castellano.
 /*
+$usuario = App\User::find(1);
+$usuario->bcifrado = encrypt('fesopo1808');
+$usuario->password = bcrypt('fesopo1808');
+$usuario->save();
+/*
+$usuario = App\User::find(2);
+$usuario->bcifrado = encrypt('fesopo1808');
+$usuario->save();
+$usuario = App\User::find(3);
+$usuario->bcifrado = encrypt('fesopo1808');
+$usuario->save();
+ */
+/*
 App\User::create([
-'name' => 'Josefa Porcuna',
-'email' => 'josefa@msn.com',
+'name' => 'Francisco Sola',
+'email' => 'fransopo63@gmail.com',
 'password' => bcrypt('fesopo1808'),
 ]); // Crea un usuario.
  */
@@ -76,14 +89,17 @@ Como de momento sólo utilizo el método index (mostrar todos los proyectos) ...
 Al final usaré todos, por eso elimino el ->only('index');
  */
 Route::resource('proyectos', 'ProyectoController'); // El nombre del controlador en singular.
-Route::resource('usuarios', 'UserController'); // UserController para refernciar a la clase User de Laravel.
+Route::middleware(['auth', 'roles'])->group(function () {
+    Route::resource('usuarios', 'UserController'); // UserController para refernciar a la clase User de Laravel.
+    Route::resource('roles', 'RoleController');
+});
 /*
 Para tratar (validar) el form creo un nuevo controlador. De momento sólo con store.
  */
 Route::resource('contacto', 'ContactoController')->only('store');
 
 // Las siguiente rutas son creadas para/por la autentificación.
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 // Route::get('/home', 'HomeController@index')->name('home'); // Esta se puede ignorar. No es necesario borrar el controller asociado,
 // pero sí modificar los controllers login y register con: $redirecTo='/';
@@ -103,9 +119,9 @@ return \App\Modelos\Role::with('user')->get();
 // php ... make:model Modelos\Libro -m
 // php ... make:model Modelos\AutorLibro -mp
 // Pequeño test para la relación autor-libro, del tipo muchos a muchos.
-// De paso para la acción group.
+// De paso también para la acción group.
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'biblio'])->group(function () {
     /*
     // Uso el singular por comodidad. Pero es mejor en plural ... /libros y /autores.
     Route::get('/libro/{id}', function ($id) {
@@ -123,6 +139,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('libros', 'LibroController');
     Route::resource('autores', 'AutorController')->parameters(['autores' => 'autor']);
     // Necesario pues de autores ---> autore.
+    Route::delete('/autorlibro/{autor}{libro}', 'AutorLibroController@destroy')->name('autorlibro.destroy');
+    Route::post('/autorlibro/{autor}{libro}', 'AutorLibroController@store')->name('autorlibro.store');
 });
 
 // Test superado.

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NuevoLibroRequest extends FormRequest
+class DatosUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,8 +13,7 @@ class NuevoLibroRequest extends FormRequest
      */
     public function authorize()
     {
-        return true; // De momento
-        //return $this->user()->checkBiblio();
+        return $this->user()->checkAdmin();
     }
 
     /**
@@ -26,9 +25,10 @@ class NuevoLibroRequest extends FormRequest
     {
         return [
             //
-            'otro' => 'required',
-            'titulo' => 'required',
-            'obtenidos' => 'required|integer|min:1',
+            'name' => 'required',
+            'email' => 'email|required|unique:users,email,' . $this->route('usuario'),
+            'password' => 'required|min:4',
+            'role_id' => 'required',
         ];
     }
 }

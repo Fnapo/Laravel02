@@ -10,11 +10,11 @@
     <br />
     @auth
     <h2 class="fondo-blanco texto-hc">
-        {{'Bienvenido: '.auth()->user()->name.'.'}}
+        {{'Bienvenid@: '.auth()->user()->name.'.'}}
     </h2>
     @else
     <h2 class="fondo-blanco texto-hc">
-        {{'Bienvenido: '.($nombre ?? 'Invitado').'.'}}
+        {{'Bienvenid@: '.($nombre ?? 'Invitado').'.'}}
     </h2>
     @endauth
 </div>

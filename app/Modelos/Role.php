@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
+    protected $fillable = [
+        'key', 'funcion', 'descripcion',
+    ];
+
     /**
      * Método que muestra los Users asociados
      *

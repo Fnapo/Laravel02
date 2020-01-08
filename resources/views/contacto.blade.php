@@ -9,8 +9,8 @@
 <div>
     <h1 class="texto-hc">@lang('Contact')</h1>
     <br />
-    <!-- Para soporat method="post" necesito un nuevo controlador.
-        Como recibe el form necesito el método store -->
+    <!-- Para soportar el method="post" necesito un nuevo controlador.
+        Como creará un mensaje necesito el método store -->
     <form method="post" action="{{route('contacto.store')}}">
         @csrf
         <!-- Protección del form -->
@@ -28,7 +28,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="texto-hc color-r">
+                        <td colspan="2" class="texto-hc color-rojo">
                             <label><strong>{{$errors->first('nombre')}}</strong></label>
                         </td>
                     </tr>
@@ -42,7 +42,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="texto-hc color-r">
+                        <td colspan="2" class="texto-hc color-rojo">
                             <label><strong>{{$errors->first('email')}}</strong></label>
                         </td>
                     </tr>
@@ -56,7 +56,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="texto-hc color-r">
+                        <td colspan="2" class="texto-hc color-rojo">
                             <label><strong>{{$errors->first('asunto')}}</strong></label>
                         </td>
                     </tr>
@@ -70,7 +70,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="texto-hc color-r">
+                        <td colspan="2" class="texto-hc color-rojo">
                             <label><strong>{{$errors->first('mensaje')}}</strong></label>
                         </td>
                     </tr>

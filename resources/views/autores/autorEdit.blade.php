@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('titulo')
-Autores | {{$autor['nombre']}} {{$autor['apellidos']}}
+Autores | {{$autor->getNombreApellidos()}}
 @endsection
 
 @section('contenido')

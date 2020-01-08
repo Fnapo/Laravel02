@@ -12,7 +12,7 @@
                 <tr>
                     <th class="celda" rowspan="2">{{'Título del libro'}}</th>
                     <th class="celda" colspan="2">{{'Ejemplares'}}</th>
-                    <th class="celda" rowspan="2">{{'Autor(es)'}}</th>
+                    <th class="celda" rowspan="2" colspan="1">{{'Autor(es)'}}</th>
                     <th class="celda" colspan="2" rowspan="2">
                         {{'Acciones'}}
                     </th>
@@ -33,14 +33,20 @@
                     <td class="celda">
                         {{$libro->disponibles}}
                     </td>
-                    <td class="celda">
-                        <ul class="margen-0 pad-0">
+                    <td class="celda texto-hr">
+                        <ul class="pad-0 margen-0 sin-estilo">
                             @forelse ($libro->autores as $autor)
-                            <li style="list-style-type:none">
-                                <a href="{{route('autores.show', $autor)}}">{{$autor->nombre.' '.$autor->apellidos}}</a>
+                            <li>
+                                <form method="POST" action="{{route('autorlibro.destroy', [$autor, $libro])}}">
+                                    @csrf
+                                    @method("DELETE")
+                                    <a href="{{route('autores.show', $autor)}}">
+                                        {{$autor->getNombreApellidos()}}</a>
+                                    <input type="submit" class="boton-peligro pad-4" value="Desligar">
+                                </form>
                             </li>
                             @empty
-                            <li style="list-style-type:none">{{'Anónimo'}}</li>
+                            <li style="list-style-type:none">{{App\Modelos\Autor::anonimo()}}</li>
                             @endforelse
                         </ul>
                     </td>

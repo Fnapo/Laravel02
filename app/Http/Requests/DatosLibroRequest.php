@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ModificarLibroRequest extends FormRequest
+class DatosLibroRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,8 +13,7 @@ class ModificarLibroRequest extends FormRequest
      */
     public function authorize()
     {
-        return true; // De momento
-        //return $this->user()->checkBiblio();
+        return $this->user()->checkBiblio();
     }
 
     /**
@@ -24,12 +23,15 @@ class ModificarLibroRequest extends FormRequest
      */
     public function rules()
     {
+        // $campo = ($this->missing('disponibles') ? '' : 'disponibles');
+        // $condicion = ($this->missing('disponibles') ? '' : 'required|integer|between:0,' . $this->obtenidos);
+
         return [
             //
-            'otro' => 'required',
+            'autores' => 'required',
             'titulo' => 'required',
             'obtenidos' => 'required|integer|min:1',
-            'disponibles' => 'required|integer|between:0,' . $this->obtenidos,
+            'disponibles' => 'sometimes|required|integer|between:0,' . $this->obtenidos,
         ];
     }
 }

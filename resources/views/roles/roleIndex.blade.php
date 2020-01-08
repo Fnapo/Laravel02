@@ -1,40 +1,39 @@
 @extends('plantilla')
 
-@section('titulo')
-@lang('Users')
-@endsection
+@section('titulo', 'Roles')
 
 @section('contenido')
 <div>
-    <?php $vacio = "Sin usuarios para mostrar"; ?>
-    <h1 class="texto-hc">{{__('Users')}}</h1>
+    <?php $vacio = "Sin roles para mostrar"; ?>
+    <h1 class="texto-hc">Roles</h1>
     <br />
     @auth
     <div class="texto-hc">
         <button class="caja-boton bordes-2">
-            <a class="boton-normal" href="{{route('usuarios.create')}}">{{'Crear un usuario'}}</a>
+            <a class="boton-normal" href="{{route('roles.create')}}">{{'Crear un Role'}}</a>
         </button>
     </div>
     <br />
     @endauth
-    @isset($usuarios)
+    @isset($roles)
     <div class="centraTabla">
         <table class="tabla tabla-i-b colapsada">
             <thead>
                 <tr>
-                    <th class="celda">{{'Nombre del Usuario'}}</th>
+                    <th class="celda">{{'Clave del Role'}}</th>
                     <th class="celda"> {{'Acciones'}} </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($usuarios as $usuario)
+                @foreach ($roles as $role)
                 <tr>
                     <td class="celda">
-                        {{$usuario->name}}
+                        {{$role->key}}
+                    </td>
                     </td>
                     <td class="celda">
                         <button type="button" class="caja-boton bordes-2">
-                            <a class="boton-normal" href="{{route('usuarios.show', $usuario->id)}}">{{'Detalles'}}</a>
+                            <a class="boton-normal" href="{{route('roles.show', $role->id)}}">{{'Detalles'}}</a>
                         </button>
                     </td>
                 </tr>
@@ -42,7 +41,7 @@
             </tbody>
             <tfoot></tfoot>
         </table>
-        <div class="texto-hc">{{$usuarios->links()}}</div>
+        <div class="texto-hc">{{$roles->links()}}</div>
     </div>
     @else
     <!-- del isset -->

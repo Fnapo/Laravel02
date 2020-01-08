@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'bcifrado', 'role_id',
     ];
 
     /**
@@ -24,7 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'bcifrado',
     ];
 
     /**
@@ -43,7 +43,7 @@ class User extends Authenticatable
      */
     public function checkAdmin()
     {
-        $roles = ['admin'];
+        $roles = ['Administrador'];
 
         //foreach ($this->roles as $role)
         {
@@ -64,11 +64,11 @@ class User extends Authenticatable
      */
     public function checkBiblio()
     {
-        $roles = ['biblio'];
+        $roles = ['Bibliotecario'];
 
         // foreach ($this->roles as $role)
         {
-            if (in_array($this->$role->key, $roles)) {
+            if (in_array($this->role->key, $roles)) {
                 return true;
             }
         }
@@ -85,5 +85,35 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Modelos\Role', 'role_id');
         // role_id pertenece a User, es innecesario con este formato.
+    }
+
+    /**
+     * Método para encriptar el password.
+     *
+     */
+    public function setBcifradoAttribute($valor)
+    {
+        $this->attributes['bcifrado'] = encrypt($valor);
+    }
+
+    /**
+     * Método para bcriptar el password.
+     *
+     */
+    public function setPasswordAttribute($valor)
+    {
+        $this->attributes['password'] = bcrypt($valor);
+    }
+
+    /**
+     * Método para obtener el supuesto nombre del Usuario.
+     *
+     * @return string
+     */
+    public function getNombre()
+    {
+        $partes = explode(" ", $this->name);
+
+        return $partes[0];
     }
 }

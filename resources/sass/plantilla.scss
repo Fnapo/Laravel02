@@ -2,6 +2,7 @@
     Prepocesador sass de css
 */
 
+@import 'misColores';
 body {
     background-color: lightgray;
     width: 100%;
@@ -20,10 +21,6 @@ a.desactivado {
     font-size: larger;
     color: black;
     text-decoration: none;
-}
-
-.bordes-2 {
-    border: 2px solid black;
 }
 
 [class*="boton-"]:hover {
@@ -57,20 +54,8 @@ a.desactivado {
     background-color: darkred;
 }
 
-.color-r {
-    color: red;
-}
-
 .texto-hc {
     text-align: center;
-}
-
-[class*="-bold"] {
-    font-weight: bolder;
-}
-
-.fondo-naranja {
-    background-color: aliceblue;
 }
 
 .sin-bordes {
@@ -82,19 +67,25 @@ a.desactivado {
         display: inline-block;
         width: $dato*1em;
     }
-    @if $dato>11 {
-        [class*="fuente-#{$dato}"] {
-            font-size: $dato*1px;
+}
+
+@for $dato from 1 to 31 {
+    @each $grosor in map-keys($grosor-mapa) {
+        @if $dato>10 {
+            .fuente-#{$dato}#{$grosor} {
+                font-size: $dato*1px;
+                font-weight: map-get($grosor-mapa, $grosor);
+            }
         }
-    }
-    @else {
-        [class*="fuente-#{$dato}"] {
-            font-size: 10px;
+        @else {
+            .fuente-#{$dato}#{$grosor} {
+                font-size: 10px;
+                font-weight: map-get($grosor-mapa, $grosor);
+            }
         }
     }
 }
 
-@import 'misColores';
 @each $color in map-keys($color-mapa) {
     @each $tono in map-keys($tono-mapa) {
         .fondo-#{$color}#{$tono} {
@@ -117,6 +108,9 @@ a.desactivado {
 @for $dato from 0 to 21 {
     .margen-#{$dato} {
         margin: $dato*1px;
+    }
+    .bordes-#{$dato} {
+        border: $dato*1px solid black;
     }
 }
 
@@ -169,12 +163,12 @@ input {
     border: 2px solid black;
 }
 
-.nav-item {
-    margin: 10px;
-}
-
 .flex-der {
     flex-direction: row-reverse;
+}
+
+.flex-izq {
+    flex-direction: row;
 }
 
 .alto-pantalla {
@@ -187,4 +181,28 @@ input {
 
 .texto-hr {
     text-align: right;
+}
+
+ol.sin-estilo {
+    list-style: none;
+}
+
+ol.sin-estilo a {
+    text-decoration: none;
+}
+
+ul.sin-estilo {
+    list-style: none;
+}
+
+ul.sin-estilo a {
+    text-decoration: none;
+}
+
+.oculto {
+    display: none;
+}
+
+.nav-item:hover .oculto {
+    display: block;
 }

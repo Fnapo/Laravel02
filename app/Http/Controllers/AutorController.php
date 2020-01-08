@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DatosAutorRequest;
 use App\Modelos\Autor;
 use Illuminate\Http\Request;
-use App\Http\Requests\DatosAutorRequest;
 
 class AutorController extends Controller
 {
@@ -71,6 +71,8 @@ class AutorController extends Controller
     public function edit(Autor $autor)
     {
         //
+        $autor = Autor::findOrFail($autor->id);
+
         return view('autores/autorEdit', compact('autor'));
     }
 
@@ -85,6 +87,7 @@ class AutorController extends Controller
     {
         //
         $datos = $request->validated();
+        $autor = Autor::findOrFail($autor->id);
 
         $autor->update($datos);
 

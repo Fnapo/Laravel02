@@ -2,7 +2,6 @@
 <div>
     <?php
     $roleUsuario=(is_null($usuario) ? -1 : $usuario->role->id);
-    $rolesID=App\Modelos\Role::all()->sortBy('key')->modelKeys();
     $cuantos=0;
     ?>
 </div>
@@ -63,12 +62,11 @@
                 <td>
                     <label class="ancho-10 texto-hc fondo-naranja fuente-20-bold margen-0">Role:</label>
                 </td>
-                <td class="celda texto-hc">
-                    @foreach ($rolesID as $roleID)
-                    <?php $role=App\Modelos\Role::find($roleID);?>
-                    <input type="radio" name="role_id" value="{{$roleID}}" id="{{'role' .$roleID}}"
-                        {{$roleID == $roleUsuario ? "checked" : ""}}><label for="{{'role' .$roleID}}"
-                        class="ancho-10 fondo-verdeMarOscuro">{{$role->key}}</label>
+                <td class="celda texto-hj fondo-blanco">
+                    @foreach ($rolesKeyId as $id=>$key)
+                    <input type="radio" name="role_id" value="{{$id}}" id="{{'role' .$id}}"
+                        {{(is_null(old('role_id')) ? $id == $roleUsuario : $id == old('role_id')) ? "checked" : ""}}><label
+                        for="{{'role' .$id}}" class="ancho-10 fondo-verdeMarOscuro">{{$key}}</label>
                     <?php ++$cuantos;?>
                     @if (($cuantos % 2) == 0)
                     <br />

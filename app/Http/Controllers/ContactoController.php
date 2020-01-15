@@ -51,6 +51,8 @@ class ContactoController extends Controller
         // o a otro driver de email.
         // return (new MensajeRecibido($contenido)); // Para verlo en el navegador. Pero hay problemas con el uso
         // de la actualización del navegador, pregunta si quieres reenviar el formulario. Uso back o redirect con with.
+        // Importante casi seguro se debe hacer php artisan config:cache para actualizar los valores del .env en caché.
+        // Además de usar la contraseña generada, como segundo factor, para el dispositivo en lugar de la tuya propia.
 
         return redirect()->route('home')->with('estado', 'Mensaje enviado ...');
     }

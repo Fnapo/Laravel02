@@ -19,7 +19,6 @@
         <p>
             <strong>Mensaje:</strong> {{$contenido['mensaje']}}.
         </p>
-        <a href="{{route('home')}}">Ir a Inicio</a>
     </body>
 
 </html>

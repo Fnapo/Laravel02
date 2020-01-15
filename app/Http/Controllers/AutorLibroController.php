@@ -98,14 +98,8 @@ class AutorLibroController extends Controller
         }
         DB::table('autor_libro')->where('autor_id', $autor)->where('libro_id', $libro)->delete();
         /*
-        Otra opción con Eloquent.
-        $libroBuscado=Libro::find($libro);
-        $autorBuscado=Autor::find($autor);
-        if(is_null($autorBuscado) || is_null($libroBuscado))
-        {
-        return redirect()->back()->with('estado', 'El Autor o el Libro no existe ...');
-        }
-        $libroBuscado->autores->detach($autor);
+        La mejor opción con Eloquent.
+        $objeto->delete();
          */
 
         return redirect()->back()->with('estado', 'Detectado falso Autor ...');

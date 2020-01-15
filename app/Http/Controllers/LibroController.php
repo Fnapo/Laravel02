@@ -22,16 +22,13 @@ class LibroController extends Controller
     protected function controlarAutores(array $autores, Libro $libro)
     {
         // Primer contol si se ha elegido Anónimo.
-        if (in_array(Autor::valor(), $autores)) {
+        if (in_array(Autor::valorAnonimo(), $autores)) {
             $autores = [];
         }
         // Segundo control si es un Autor que no está en la BD.
         Autor::findOrFail($autores);
         // Camino normal.
-        $controlador = new AutorLibroController;
-        foreach ($autores as $autor) {
-            $controlador->store($autor, $libro->id);
-        }
+        $libro->autores()->attach($autores);
     }
 
     /**
@@ -55,7 +52,10 @@ class LibroController extends Controller
     public function create()
     {
         //
-        return view('libros/libroCreate', ['libro' => null]);
+        $libro = null;
+        $noAutores = Autor::all()->sortBy('nombre_completo2')->pluck('nombre_completo', 'id');
+
+        return view('libros/libroCreate', compact('libro', 'noAutores'));
     }
 /**
  * Store a newly created resource in storage.
@@ -84,7 +84,7 @@ class LibroController extends Controller
     public function show(Libro $libro)
     {
         //
-        $libro = Libro::findOrFail($libro->id);
+        $libro = Libro::with('autores')->findOrFail($libro->id);
 
         return view('libros/libroShow', compact('libro'));
     }
@@ -99,8 +99,10 @@ class LibroController extends Controller
     {
         //
         $libro = Libro::findOrFail($libro->id);
+        $autoresLibro = $libro->autores->modelKeys();
+        $noAutores = Autor::all()->sortBy('nombre_completo2')->except($autoresLibro)->pluck('nombre_completo', 'id');
 
-        return view('libros/libroEdit', compact('libro'));
+        return view('libros/libroEdit', compact('libro', 'noAutores'));
     }
 
     /**

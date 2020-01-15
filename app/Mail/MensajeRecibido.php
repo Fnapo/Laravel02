@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -32,6 +31,7 @@ class MensajeRecibido extends Mailable
      */
     public function build()
     {
-        return $this->view('emails/mensaje');
+        return $this->from($this->contenido['email'], $this->contenido['nombre'])->view('emails/mensaje');
+        // Se debe añadir from para mensajes reales si el emisor no es siempre el mismo.
     }
 }

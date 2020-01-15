@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\DatosUserRequest;
+use App\Modelos\Role;
 use App\User;
 
 class UserController extends Controller
@@ -37,7 +38,10 @@ class UserController extends Controller
     public function create()
     {
         //
-        return view('usuarios/userCreate', ['usuario' => null]);
+        $usuario = null;
+        $rolesKeyId = Role::all()->sortBy('key')->pluck('key', 'id');
+
+        return view('usuarios/userCreate', compact('usuario', 'rolesKeyId'));
     }
 
     /**
@@ -81,8 +85,9 @@ class UserController extends Controller
     {
         //
         $usuario = User::findOrFail($id);
+        $rolesKeyId = Role::all()->sortBy('key')->pluck('key', 'id');
 
-        return view('usuarios/userEdit', compact('usuario'));
+        return view('usuarios/userEdit', compact('usuario', 'rolesKeyId'));
     }
 
     /**

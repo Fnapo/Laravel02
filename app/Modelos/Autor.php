@@ -40,7 +40,7 @@ class Autor extends Model
     /**
      * Accessors +- campos creados.
      */
-    public function getNombreCompleto()
+    public function getNombreCompletoAttribute()
     {
         return $this->apellidos . ' ' . $this->nombre;
     }
@@ -63,5 +63,5 @@ class Autor extends Model
      *
      * @var array
      */
-    protected $appends = ['nombre_completo2'];
+    protected $appends = ['nombre_completo2', 'nombre_completo'];
 }

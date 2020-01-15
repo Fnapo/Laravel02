@@ -1,10 +1,4 @@
 @csrf
-<div>
-    <?php
-    $autoresLibro=(is_null($libro) ? [] : $libro->autores->modelKeys());
-    $noAutores=App\Modelos\Autor::all()->sortBy('nombre_completo2')->except($autoresLibro)->modelKeys();
-    ?>
-</div>
 <div class="centraTabla">
     <table class="tabla-i-b">
         <thead></thead>
@@ -25,11 +19,12 @@
                 <td>
                     <select name="autores[]" multiple class="ancho-20">
                         <option value="{{App\Modelos\Autor::valorAnonimo()}}">{{App\Modelos\Autor::anonimo()}}</option>
-                        <option disabled class="texto-hc">{{'-------'}}</option>
-                        @foreach ($noAutores as $autor)
-                        <?php $dato=App\Modelos\Autor::find($autor);?>
-                        <option value="{{$autor}}">
-                            {{$dato->getNombreCompleto()}}
+                        <option disabled class="texto-hc">
+                            <hr />
+                        </option>
+                        @foreach ($noAutores as $id=>$nombreCompleto)
+                        <option value="{{$id}}">
+                            {{$nombreCompleto}}
                         </option>
                         @endforeach
                     </select>
@@ -57,7 +52,8 @@
                 </td>
                 <td colspan="2" rowspan="3">
                     <label class="ancho-20 texto-hc fondo-blanco fuente-20-bold margen-0">Notas: Se debe elegir al menos
-                        un autor.<br />Si se opta por {{App\Modelos\Autor::anonimo()}} se
+                        un autor.
+                        <hr />Si se opta por {{App\Modelos\Autor::anonimo()}} se
                         ignorarán el resto de los seleccionados.</label>
                 </td>
             </tr>

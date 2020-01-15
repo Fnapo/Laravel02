@@ -54,10 +54,6 @@ a.desactivado {
     background-color: darkred;
 }
 
-.texto-hc {
-    text-align: center;
-}
-
 .sin-bordes {
     border: none;
 }
@@ -65,11 +61,11 @@ a.desactivado {
 @for $dato from 1 to 31 {
     .ancho-#{$dato} {
         display: inline-block;
-        width: $dato*1em;
+        width: $dato*1rem;
     }
 }
 
-@for $dato from 1 to 31 {
+@for $dato from 1 to 101 {
     @each $grosor in map-keys($grosor-mapa) {
         @if $dato>10 {
             .fuente-#{$dato}#{$grosor} {
@@ -98,11 +94,11 @@ a.desactivado {
 }
 
 .alto-2 {
-    line-height: 2em;
+    line-height: 2rem;
 }
 
 .alto-3 {
-    line-height: 3em;
+    line-height: 3rem;
 }
 
 @for $dato from 0 to 21 {
@@ -175,8 +171,20 @@ input {
     height: 100vh;
 }
 
+.ancho-pantalla {
+    width: 100vw;
+}
+
 .texto-hl {
     text-align: left;
+}
+
+.texto-hc {
+    text-align: center;
+}
+
+.texto-hj {
+    text-align: justify;
 }
 
 .texto-hr {
@@ -187,16 +195,8 @@ ol.sin-estilo {
     list-style: none;
 }
 
-ol.sin-estilo a {
-    text-decoration: none;
-}
-
 ul.sin-estilo {
     list-style: none;
-}
-
-ul.sin-estilo a {
-    text-decoration: none;
 }
 
 .oculto {

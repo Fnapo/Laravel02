@@ -12,24 +12,30 @@
  */
 
 App::setlocale('es'); // Para avisos en castellano.
+// Muestra las consultas SQL ejecutadas.
+/*
+DB::listen(function ($consulta) {
+echo "<pre> $consulta->sql </pre>";
+});
+ */
 /*
 $usuario = App\User::find(1);
-$usuario->bcifrado = encrypt('fesopo1808');
-$usuario->password = bcrypt('fesopo1808');
+$usuario->bcifrado = encrypt('12345');
+$usuario->password = bcrypt('12345');
 $usuario->save();
 /*
 $usuario = App\User::find(2);
-$usuario->bcifrado = encrypt('fesopo1808');
+$usuario->bcifrado = encrypt('12345');
 $usuario->save();
 $usuario = App\User::find(3);
-$usuario->bcifrado = encrypt('fesopo1808');
+$usuario->bcifrado = encrypt('12345');
 $usuario->save();
  */
 /*
 App\User::create([
 'name' => 'Francisco Sola',
 'email' => 'fransopo63@gmail.com',
-'password' => bcrypt('fesopo1808'),
+'password' => bcrypt('12345'),
 ]); // Crea un usuario.
  */
 /*
